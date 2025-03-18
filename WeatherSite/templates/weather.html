@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Weather Prediction</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    
+    {% if error_message %}
+        <div class="error">{{ error_message }}</div>
+    {% endif %}
+    
+    {% if city %}
+    <h2>Weather in {{ city }}</h2>
+    <div id="weather-info">
+        <div class="weather-box">
+            <h3>Temperature</h3>
+            <p>{{ temperature }}°C</p>
+        </div>
+        <div class="weather-box">
+            <h3>Condition</h3>
+            <p>{{ condition }}</p>
+        </div>
+        <div class="weather-box">
+            <h3>Humidity</h3>
+            <p>{{ humidity }}%</p>
+        </div>
+        <div class="weather-box">
+            <h3>Wind Speed</h3>
+            <p>{{ wind_speed }} km/h</p>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>

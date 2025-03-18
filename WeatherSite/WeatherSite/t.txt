@@ -1,0 +1,22 @@
+WeatherPredictionSite/
+├── venv/
+├── WeatherSite/
+│   ├── manage.py
+│   ├── WeatherSite/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── weather_app/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations/
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   ├── templates/
+│   └── static/
+│       ├── css/
+│       ├── js/
+│       └── images/
